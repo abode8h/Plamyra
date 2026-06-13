@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#FAF5E8">
+<title>Plamyra Vintage — Timeless Pieces for Your Space</title>
+<meta name="description" content="Plamyra Vintage: vintage typewriters, curated vintage finds and live auctions. Find all our shops here.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FAF5E9'/%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%23B6914F' stroke-width='2'/%3E%3Ctext x='32' y='43' font-family='Georgia, serif' font-size='30' fill='%233D2B1C' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:      #FAF5E8;
+    --card:       #FFFDF6;
+    --brown:      #3D2B1C;
+    --brown-soft: #6E5840;
+    --gold:       #B6914F;
+    --gold-soft:  #CDB075;
+    --gold-pale:  #E3D3A8;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; color-scheme:light only; }
+
+  body{
+    font-family:'EB Garamond', Georgia, serif;
+    color:var(--brown);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(255,253,245,.8), transparent 60%),
+      radial-gradient(ellipse at 50% 115%, rgba(182,145,79,.08), transparent 55%),
+      var(--cream);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:26px 14px 34px;
+    position:relative;
+  }
+
+  /* ── subtle paper grain ──────────────────── */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events:none;
+    z-index:1;
+  }
+
+  /* ── ornamental double frame ─────────────── */
+  .frame{
+    width:100%;
+    max-width:470px;
+    position:relative;
+    z-index:2;
+    border:1px solid var(--gold-soft);
+    padding:34px 20px 30px;
+  }
+  .frame::before{
+    content:"";
+    position:absolute; inset:5px;
+    border:1px solid var(--gold-pale);
+    pointer-events:none;
+  }
+  .frame-jewel{
+    position:absolute;
+    top:-9px; left:50%;
+    transform:translateX(-50%);
+    background:var(--cream);
+    padding:0 10px;
+    color:var(--gold);
+    font-size:13px;
+    line-height:18px;
+  }
+  .frame-jewel.bottom{ top:auto; bottom:-9px; }
+
+  /* ── header lockup ───────────────────────── */
+  header{ text-align:center; }
+
+  .flourish{
+    width:min(230px, 70%);
+    color:var(--gold);
+    display:block;
+    margin:0 auto 14px;
+  }
+  .flourish.flip{ transform:scaleY(-1); margin:16px auto 0; }
+
+  h1{
+    font-family:'Cinzel', Georgia, serif;
+    font-weight:500;
+    font-size:clamp(34px, 9.5vw, 46px);
+    letter-spacing:.13em;
+    text-indent:.13em;
+    text-transform:uppercase;
+    color:var(--brown);
+  }
+
+  .rule-gem{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:10px auto 12px;
+    width:min(250px, 75%);
+    color:var(--gold);
+    font-size:11px;
+  }
+  .rule-gem::before, .rule-gem::after{
+    content:"";
+    flex:1;
+    border-top:1px solid var(--gold-soft);
+  }
+
+  .vintage{
+    font-family:'Cinzel', Georgia, serif;
+    font-weight:400;
+    font-size:15px;
+    letter-spacing:.55em;
+    text-indent:.55em;
+    color:var(--brown-soft);
+  }
+
+  .tagline{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:20px;
+    color:var(--gold);
+    margin-top:14px;
+  }
+
+  /* ── catalog cards ───────────────────────── */
+  .cards{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:26px;
+  }
+
+  .card{
+    display:block;
+    text-decoration:none;
+    color:var(--brown);
+    background:var(--card);
+    border:1px solid var(--gold-soft);
+    outline:1px solid var(--gold-pale);
+    outline-offset:-5px;
+    padding:20px 22px 16px;
+    position:relative;
+    box-shadow:0 2px 10px rgba(120,90,40,.08);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover, .card:focus-visible{
+    transform:translateY(-3px);
+    border-color:var(--gold);
+    box-shadow:0 8px 22px rgba(120,90,40,.16);
+  }
+  .card:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  .plaque{
+    position:absolute;
+    top:14px; right:16px;
+    font-family:'Cinzel', Georgia, serif;
+    font-size:9.5px;
+    letter-spacing:.22em;
+    color:var(--gold);
+    border-bottom:1px solid var(--gold-pale);
+    padding-bottom:2px;
+    text-transform:uppercase;
+  }
+
+  .card-head{
+    display:flex;
+    align-items:center;
+    gap:15px;
+  }
+
+  /* platform medallion */
+  .medallion{
+    flex:0 0 auto;
+    width:48px; height:48px;
+    border-radius:50%;
+    background:var(--card);
+    border:1px solid var(--gold);
+    box-shadow:0 0 0 3px var(--card), 0 0 0 4px var(--gold-pale);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .medallion img{
+    width:26px; height:26px;
+    object-fit:contain;
+    display:block;
+  }
+  /* graceful fallback letter if a logo fails to load */
+  .medallion .fallback{
+    display:none;
+    font-family:'Cinzel', Georgia, serif;
+    font-weight:600;
+    font-size:21px;
+    color:var(--brown);
+  }
+
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:10.5px;
+    font-family:'EB Garamond', Georgia, serif;
+    letter-spacing:.2em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:3px;
+    padding-right:74px; /* keep clear of the plaque */
+  }
+
+  .card h2{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-weight:600;
+    font-size:22px;
+    letter-spacing:.02em;
+  }
+
+  .card p{
+    font-size:15.5px;
+    line-height:1.55;
+    color:var(--brown-soft);
+    margin-top:10px;
+  }
+
+  .card-foot{
+    margin-top:13px;
+    padding-top:9px;
+    border-top:1px solid var(--gold-pale);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:10px;
+  }
+  .card-foot .where{
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--brown-soft);
+  }
+  .go{
+    font-family:'Cinzel', Georgia, serif;
+    font-size:10.5px;
+    letter-spacing:.18em;
+    color:var(--gold);
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .card:hover .go{ color:var(--brown); }
+
+  /* ── journal banner ──────────────────────── */
+  .journal{
+    display:block;
+    text-decoration:none;
+    margin-top:18px;
+    background:var(--card);
+    border:1px solid var(--gold-soft);
+    outline:1px solid var(--gold-pale);
+    outline-offset:-5px;
+    box-shadow:0 2px 10px rgba(120,90,40,.08);
+    padding:18px 20px 17px;
+    text-align:center;
+    position:relative;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .journal:hover, .journal:focus-visible{
+    transform:translateY(-3px);
+    border-color:var(--gold);
+    box-shadow:0 8px 22px rgba(120,90,40,.16);
+  }
+  .journal:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  .j-eyebrow{
+    display:block;
+    font-family:'Cinzel', Georgia, serif;
+    font-size:10px;
+    letter-spacing:.26em;
+    color:var(--gold);
+    text-transform:uppercase;
+  }
+  .j-title{
+    display:block;
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-weight:600;
+    font-size:19px;
+    line-height:1.3;
+    color:var(--brown);
+    margin-top:6px;
+  }
+  .j-go{
+    display:block;
+    font-family:'Cinzel', Georgia, serif;
+    font-size:10.5px;
+    letter-spacing:.2em;
+    color:var(--gold);
+    margin-top:9px;
+    text-transform:uppercase;
+  }
+  .journal:hover .j-go{ color:var(--brown); }
+
+  /* ── footer ──────────────────────────────── */
+  footer{
+    margin-top:24px;
+    text-align:center;
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--brown-soft);
+  }
+  footer .domain{
+    font-style:normal;
+    font-family:'Cinzel', Georgia, serif;
+    font-size:12px;
+    letter-spacing:.16em;
+    color:var(--gold);
+  }
+
+  /* ── entrance ────────────────────────────── */
+  header, .card, .journal, footer{
+    opacity:0;
+    transform:translateY(10px);
+    animation:rise .7s ease forwards;
+  }
+  .card:nth-child(1){ animation-delay:.15s; }
+  .card:nth-child(2){ animation-delay:.3s; }
+  .card:nth-child(3){ animation-delay:.45s; }
+  .journal{ animation-delay:.55s; }
+  footer{ animation-delay:.65s; }
+  @keyframes rise{ to{ opacity:1; transform:none; } }
+
+  @media (prefers-reduced-motion: reduce){
+    header, .card, .journal, footer{ animation:none; opacity:1; transform:none; }
+    .card, .card:hover{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<main class="frame">
+  <span class="frame-jewel" aria-hidden="true">❖</span>
+
+  <header>
+    <svg class="flourish" viewBox="0 0 220 26" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M110 17 C 97 4 79 3 72 11 C 67 17 74 23 79 19 C 83 15 78 9 72 12"/>
+        <path d="M110 17 C 123 4 141 3 148 11 C 153 17 146 23 141 19 C 137 15 142 9 148 12"/>
+        <path d="M68 14 H 12"/>
+        <path d="M152 14 H 208"/>
+      </g>
+      <path d="M110 4 L 114 11 L 110 15 L 106 11 Z" fill="currentColor"/>
+      <circle cx="12" cy="14" r="1.7" fill="currentColor"/>
+      <circle cx="208" cy="14" r="1.7" fill="currentColor"/>
+    </svg>
+
+    <h1>Plamyra</h1>
+
+    <div class="rule-gem" aria-hidden="true">✦</div>
+
+    <div class="vintage">Vintage</div>
+
+    <p class="tagline">Timeless pieces for your space</p>
+  </header>
+
+  <nav class="cards" aria-label="Plamyra shops">
+
+    <a class="card" href="https://plamyratypewriters.etsy.com" target="_blank" rel="noopener">
+      <span class="plaque" aria-hidden="true">Etsy Shop</span>
+      <div class="card-head">
+        <span class="medallion" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="6" fill="#F1641E"/><text x="16" y="24" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">E</text></svg>
+        </span>
+        <div>
+          <div class="eyebrow">Shop Nº 01 · Etsy</div>
+          <h2>Plamyra Typewriters</h2>
+        </div>
+      </div>
+      <p>Vintage &amp; collectible typewriters from decades past — cleaned, tested and ready to find a new desk.</p>
+      <div class="card-foot">
+        <span class="where">plamyratypewriters.etsy.com</span>
+        <span class="go">Visit →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://plamyravintage.etsy.com" target="_blank" rel="noopener">
+      <span class="plaque" aria-hidden="true">Etsy Shop</span>
+      <div class="card-head">
+        <span class="medallion" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="6" fill="#F1641E"/><text x="16" y="24" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">E</text></svg>
+        </span>
+        <div>
+          <div class="eyebrow">Shop Nº 02 · Etsy</div>
+          <h2>Plamyra Vintage</h2>
+        </div>
+      </div>
+      <p>A curated cabinet of vintage finds — décor, collectibles and curiosities with a story to tell.</p>
+      <div class="card-foot">
+        <span class="where">plamyravintage.etsy.com</span>
+        <span class="go">Visit →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://www.catawiki.com/en/u/29002889-plamyra" target="_blank" rel="noopener">
+      <span class="plaque" aria-hidden="true">Auctions</span>
+      <div class="card-head">
+        <span class="medallion" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="6" fill="#0F2C52"/><text x="16" y="24" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">C</text></svg>
+        </span>
+        <div>
+          <div class="eyebrow">Nº 03 · Catawiki</div>
+          <h2>Plamyra on Catawiki</h2>
+        </div>
+      </div>
+      <p>Rare &amp; special pieces under the hammer — follow our live auctions and place your bid.</p>
+      <div class="card-foot">
+        <span class="where">catawiki.com / plamyra</span>
+        <span class="go">Bid →</span>
+      </div>
+    </a>
+
+  </nav>
+
+  <a class="journal" href="typewriter-guide.html">
+    <span class="j-eyebrow">The Plamyra Journal</span>
+    <span class="j-title">How to Choose Your First Vintage Typewriter</span>
+    <span class="j-go">Read the Collector's Guide →</span>
+  </a>
+
+  <footer>
+    <svg class="flourish flip" viewBox="0 0 220 26" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M110 17 C 97 4 79 3 72 11 C 67 17 74 23 79 19 C 83 15 78 9 72 12"/>
+        <path d="M110 17 C 123 4 141 3 148 11 C 153 17 146 23 141 19 C 137 15 142 9 148 12"/>
+        <path d="M68 14 H 12"/>
+        <path d="M152 14 H 208"/>
+      </g>
+      <path d="M110 4 L 114 11 L 110 15 L 106 11 Z" fill="currentColor"/>
+      <circle cx="12" cy="14" r="1.7" fill="currentColor"/>
+      <circle cx="208" cy="14" r="1.7" fill="currentColor"/>
+    </svg>
+    <span class="domain">plamyra.nl</span><br>
+    timeless pieces, lovingly found
+  </footer>
+
+  <span class="frame-jewel bottom" aria-hidden="true">❖</span>
+</main>
+
+</body>
+</html>
